@@ -61,7 +61,7 @@ pub fn touch_pick_events(
                 // Send a move event only if it isn't the same as the last one
                 if let Some(last_touch) = location_cache.get(&touch.id) {
                     if last_touch == touch {
-                        break;
+                        continue;
                     }
                     input_moves.send(InputMove::new(
                         pointer,
